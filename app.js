@@ -75,6 +75,9 @@ app.use(eraseSessionMessage());
 
 // Getting/Using router(s)
 
+
+
+
 const basePageRouter = require("./routes/index");
 app.use("/", basePageRouter);
 
