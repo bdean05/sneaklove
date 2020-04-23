@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("foo"); 
+  res.render("index.hbs"); 
 });
 
 router.get("/sneakers/:cat", (req, res) => {
@@ -10,7 +10,7 @@ router.get("/sneakers/:cat", (req, res) => {
 });
 
 router.get("/one-product/:id", (req, res) => {
-  res.send("baz");
+  res.render("one-product.hbs");
 });
 
 
