@@ -18,9 +18,9 @@ const path = require("path");
 
 // initial config
 app.set("view engine", "hbs");
-app.set("views", __dirname + "/view");
+app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, 'public')));
-hbs.registerPartials(__dirname + "/views/partials");
+hbs.registerPartials(__dirname + "/views/partial");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
@@ -74,8 +74,12 @@ app.use(checkloginStatus);
 app.use(eraseSessionMessage());
 
 // Getting/Using router(s)
+
 const basePageRouter = require("./routes/index");
 app.use("/", basePageRouter);
+
+const authRouter = require("./routes/auth");
+app.use("/", authRouter);
 
 const listener = app.listen(process.env.PORT, () => {
   console.log(
