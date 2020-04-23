@@ -10,7 +10,6 @@ const seedSneakers = [
         description: 'OG',
         price: 123,
         category: 'Kids',
-        image: ''
     },
     {
         name: 'Lebron 6',
@@ -19,7 +18,6 @@ const seedSneakers = [
         description: 'OG',
         price: 123,
         category: 'Men',
-        image: ''
     },
     {
         name: 'Kobe 8',
@@ -28,7 +26,6 @@ const seedSneakers = [
         description: 'OG',
         price: 123,
         category: 'Women',
-        image: ''
     },
     {
         name: 'KD 5',
@@ -37,7 +34,6 @@ const seedSneakers = [
         description: 'OG',
         price: 123,
         category: 'Women',
-        image: ''
     },
 ]
 function seedDb(seedData) {

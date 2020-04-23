@@ -9,9 +9,9 @@ const sneakerSchema = new Schema({
     price:Number,
     category:{
         type:String,
-        enum:[men, women, kids]
+        enum:["Men", "Women", "Kids"]
     },
-    id_tags:{ type: MyObjectId, ref: 'Tag' }
+    id_tags:[{ type: Schema.Types.Object, ref: "Tag" }]
 })
 
 const Sneaker = mongoose.model("Sneaker", sneakerSchema)

@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const tagSchema = new Schema({
     label: String,
+    sneaker:[MyObjectId]
 })
 
 const Tag = mongoose.model("Tag", tagSchema);
