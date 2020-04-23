@@ -2,7 +2,7 @@
 
 require("dotenv").config();
 require("./config/mongodb"); // database initial setup
-require("./helpers/hbs"); // utils for hbs templates
+require("./helpers/helpers-hbs"); // utils for hbs templates
 
 
 // base dependencies
@@ -13,6 +13,7 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 
 // initial config
@@ -34,8 +35,8 @@ app.use(
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60 // 1 day
     }),
-    saveUninitialized: true,
-    resave: true
+    saveUninitialized: false,
+    resave: false
   })
 );
 
