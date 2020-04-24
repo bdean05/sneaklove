@@ -43,7 +43,7 @@ router.get("/signup", (req, res) => {
 
 
 
-router.post("/signup", upload.single("avatar"), (req, res) => {
+router.post("/signup", (req, res) => {
   // console.log(req.file);
   // console.log(req.body);
   //
