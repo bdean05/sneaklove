@@ -15,7 +15,6 @@ router.get("/sneakers/:cat", (req, res) => {
         res.render("products.hbs", {
           sneakers: dbResult,
           tags: dbResTag,
-          cat: "collection"
         })
       }).catch(dbErr => console.log(dbErr))
     }).catch(dbErr => console.log(dbErr))
@@ -30,6 +29,14 @@ router.get("/sneakers/:cat", (req, res) => {
 
   }
 });
+
+router.get("/sneakers/collection/:id", (req, res) => {
+  Sneaker.find({id_tags:[req.params.id]}).then(dbRes=>{
+    res.render("products.hbs", {
+      sneakers: dbRes
+    })
+  }).catch(dbErr => console.log(dbErr))
+})
 
 router.get("/one-product/:id", (req, res) => {
   Sneaker.findById(req.params.id).then(dbResult => {
