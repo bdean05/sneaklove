@@ -14,6 +14,7 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
 const path = require("path");
+const flash = require("connect-flash");
 
 
 // initial config
@@ -39,6 +40,22 @@ app.use(
     resave: false   // previously true
   })
 );
+
+
+
+app.use(flash());
+app.use((req, res, next) => {    
+  if (req.session.currentUser) {
+    res.locals.user = req.session.currentUser
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.isLoggedIn = false;
+  }
+  next();
+});
+
+
+
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request (var instead of hardcoded)
