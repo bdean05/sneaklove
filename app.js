@@ -22,7 +22,7 @@ app.set("view engine", "hbs");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(__dirname + "/views/partial");
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 

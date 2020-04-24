@@ -4,9 +4,9 @@ const Schema = mongoose.Schema
 const sneakerSchema = new Schema({
     name: String,
     ref: String,
-    sizes: Number,
+    sizes: String,
     description: String,
-    price:Number,
+    price:String,
     category:{
         type:String,
         enum:["Men", "Women", "Kids"]
